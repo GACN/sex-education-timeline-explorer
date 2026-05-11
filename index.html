@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sex Education 人物时间线</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">32 集 PDF 台词索引 · 人物关系分析</p>
+      <h1>Sex Education 人物时间线</h1>
+    </div>
+    <div class="toolbar">
+      <button class="icon-button" id="themeToggle" title="切换深浅色" aria-label="切换深浅色">◐</button>
+      <a class="filled-button" href="../" title="打开 PDF 文件夹">PDF</a>
+    </div>
+  </header>
+
+  <main class="shell">
+    <nav class="rail" aria-label="视图">
+      <button class="rail-item active" data-view="timeline" title="总时间线"><span>⌁</span><small>时间线</small></button>
+      <button class="rail-item" data-view="characters" title="人物线"><span>◎</span><small>人物</small></button>
+      <button class="rail-item" data-view="relations" title="关系交集"><span>◇</span><small>关系</small></button>
+      <button class="rail-item" data-view="search" title="搜索索引"><span>⌕</span><small>搜索</small></button>
+    </nav>
+
+    <section class="content">
+      <section class="hero-band">
+        <div class="stat">
+          <strong>32</strong><span>Episodes</span>
+        </div>
+        <div class="stat">
+          <strong id="characterCount">0</strong><span>Characters</span>
+        </div>
+        <div class="stat">
+          <strong id="relationCount">0</strong><span>Intersections</span>
+        </div>
+        <div class="hero-copy">
+          <h2>用时间线读人物，而不是只读剧情。</h2>
+          <p>拖动集数查看全局事件；选择人物后，页面会只显示这个人的成长线和与其他人的交集。</p>
+        </div>
+      </section>
+
+      <section class="view active" id="timelineView">
+        <div class="panel controls-panel">
+          <div class="slider-row">
+            <label for="episodeSlider">当前时间节点</label>
+            <input id="episodeSlider" type="range" min="1" max="32" value="1">
+            <output id="episodeOutput">S01E01</output>
+          </div>
+          <div class="episode-jump" id="episodeJump"></div>
+        </div>
+        <article class="episode-focus" id="episodeFocus"></article>
+        <section>
+          <div class="section-heading">
+            <h2>这一集涉及的人物线</h2>
+            <p id="episodeLineHint"></p>
+          </div>
+          <div class="event-grid" id="episodeEvents"></div>
+        </section>
+      </section>
+
+      <section class="view" id="charactersView">
+        <div class="panel filter-panel">
+          <div>
+            <label for="characterSelect">选择人物</label>
+            <select id="characterSelect"></select>
+          </div>
+          <div>
+            <label for="characterSearch">筛人物/事件</label>
+            <input id="characterSearch" type="search" placeholder="Otis、Maeve、创伤、美国...">
+          </div>
+        </div>
+        <article class="character-profile" id="characterProfile"></article>
+        <div class="timeline-list" id="characterTimeline"></div>
+      </section>
+
+      <section class="view" id="relationsView">
+        <div class="section-heading">
+          <h2>人物交集图</h2>
+          <p>点击节点查看人物线，点击下方关系卡查看两个人的交集过程。</p>
+        </div>
+        <div class="relation-layout">
+          <svg id="relationGraph" viewBox="0 0 920 560" role="img" aria-label="人物关系图"></svg>
+          <aside class="relation-detail" id="relationDetail"></aside>
+        </div>
+        <div class="relation-list" id="relationList"></div>
+      </section>
+
+      <section class="view" id="searchView">
+        <div class="panel filter-panel">
+          <div>
+            <label for="globalSearch">搜索人物、关系、事件、主题</label>
+            <input id="globalSearch" type="search" placeholder="例如：voicemail、Hope、公交、父子、美国">
+          </div>
+        </div>
+        <div class="theme-strip" id="themeStrip"></div>
+        <div class="search-results" id="searchResults"></div>
+      </section>
+    </section>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
