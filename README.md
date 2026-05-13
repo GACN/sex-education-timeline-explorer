@@ -16,6 +16,12 @@ intersections, and searchable themes into a browser-friendly interface.
 - `local_chat.py`：基于 `data.js` 检索上下文的本地问答脚本
 - `docs/Sex Education Transcripts - All Seasons.docx`：四季 32 集 PDF 台词合并后的 Word 文件
 
+## 小说更新
+
+- `docs/novel/经纬咨询室_完整小说_v2.epub`：带目录的 EPUB 小说版本
+- `docs/novel/经纬咨询室_完整小说_v2.md`：Markdown 合订本
+- `docs/novel/成稿说明_完整小说v1.md`：当前成稿说明和版本说明
+
 ## 使用方式
 
 直接打开 `index.html` 即可浏览时间线。如果通过 GitHub Pages 部署，也可以作为纯静态网页访问，不需要后端服务。
